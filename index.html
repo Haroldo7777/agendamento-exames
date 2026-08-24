@@ -152,6 +152,7 @@ tr:hover td{background:var(--surface2)}
 .info-ic{font-size:1.15rem;flex-shrink:0;line-height:1.3}
 .info-aviso{display:flex;gap:10px;align-items:flex-start;background:var(--warning-light);color:var(--warning);padding:11px 13px;border-radius:8px;font-size:.88rem;line-height:1.45;font-weight:500}
 .info-local a.btn{text-decoration:none}
+.aviso-topo{display:flex;gap:10px;align-items:flex-start;background:var(--warning-light);color:var(--warning);border:1px solid var(--warning);border-radius:var(--radius);padding:12px 14px;font-size:.86rem;line-height:1.45;margin-bottom:18px;font-weight:500;text-align:left}
 </style>
 </head>
 <body>
@@ -159,6 +160,8 @@ tr:hover td{background:var(--surface2)}
 <div id="viewForm" class="wrap">
   <h1>Agendamento de Exames Ocupacionais</h1>
   <p class="subtitle">DETRAN-RR &mdash; Proteção e Saúde do Servidor</p>
+
+  <div class="aviso-topo"><span class="info-ic">&#9888;&#65039;</span><div>Solicitamos que os agendamentos sejam feitos com pelo menos <strong>2 dias de antecedência</strong>. Isso garante tempo para a emissão da guia e agiliza o seu atendimento.</div></div>
 
   <div class="card" id="stepCpf">
     <div class="field">
