@@ -189,7 +189,7 @@ tr:hover td{background:var(--surface2)}
     <div class="msg msg-ok" id="msgOk"></div>
     <div class="info-local">
       <div class="info-item"><span class="info-ic">&#128340;</span><div><strong>Horário de comparecimento</strong><br>Das <strong>07:30 às 11:00</strong> da manhã.</div></div>
-      <div class="info-item"><span class="info-ic">&#128205;</span><div><strong>Local do exame</strong><br>R. Araújo Filho, 143 &ndash; Centro, Boa Vista &ndash; RR, 69301-090</div></div>
+      <div class="info-item"><span class="info-ic">&#128205;</span><div><strong>Local do exame</strong><br>LifeClin Medicina e Segurança do Trabalho<br>R. Araújo Filho, 143 &ndash; Centro, Boa Vista &ndash; RR, 69301-090</div></div>
       <a class="btn btn-outline" href="https://maps.app.goo.gl/BJwqdd1ohxFtUabr6" target="_blank" rel="noopener">Abrir no Google Maps</a>
       <div class="info-aviso"><span class="info-ic">&#9888;&#65039;</span><div>Ao chegar no local, <strong>identifique-se como colaborador do DETRAN-RR</strong>.</div></div>
     </div>
@@ -339,7 +339,7 @@ function wrapText(ctx,text,x,y,maxW,lh){
 function baixarComprovante(){
   const a=lastAgendamento;
   if(!a){alert('Nenhum agendamento para gerar comprovante.');return;}
-  const W=720,H=740,s=2;
+  const W=720,H=812,s=2;
   const cv=document.createElement('canvas');cv.width=W*s;cv.height=H*s;
   const ctx=cv.getContext('2d');ctx.scale(s,s);
   // fundo
@@ -370,8 +370,11 @@ function baixarComprovante(){
   ctx.fillStyle='#0d6e3e';
   campo('Data do exame',a.data,true);
   campo('Horário de comparecimento','07:30 às 11:00 da manhã');
-  ctx.fillStyle='#1a1a2e';
-  campo('Local','R. Araújo Filho, 143 – Centro, Boa Vista – RR, 69301-090');
+  ctx.fillStyle='#888';ctx.font='600 14px Segoe UI, Arial, sans-serif';ctx.fillText('LOCAL',mx,y);y+=30;
+  ctx.fillStyle='#1a1a2e';ctx.font='600 22px Segoe UI, Arial, sans-serif';
+  y=wrapText(ctx,'LifeClin Medicina e Segurança do Trabalho',mx,y,W-2*mx,28);y+=28;
+  ctx.fillStyle='#555';ctx.font='400 18px Segoe UI, Arial, sans-serif';
+  y=wrapText(ctx,'R. Araújo Filho, 143 – Centro, Boa Vista – RR, 69301-090',mx,y,W-2*mx,24);y+=34;
   // aviso
   ctx.fillStyle='#fef5e7';ctx.fillRect(mx-16,y-24,W-2*(mx-16),96);
   ctx.fillStyle='#b9770e';ctx.font='600 17px Segoe UI, Arial, sans-serif';
