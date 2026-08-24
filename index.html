@@ -147,6 +147,11 @@ tr:hover td{background:var(--surface2)}
 .day-section{margin-bottom:18px}
 .day-title{font-weight:700;font-size:.92rem;color:var(--accent);margin-bottom:6px;padding:6px 0;border-bottom:2px solid var(--accent-light)}
 .day-count{font-size:.78rem;color:var(--text2);font-weight:400}
+.info-local{margin-top:16px;display:flex;flex-direction:column;gap:12px;text-align:left;border-top:1px solid var(--border);padding-top:16px}
+.info-item{display:flex;gap:10px;align-items:flex-start;font-size:.9rem;color:var(--text);line-height:1.45}
+.info-ic{font-size:1.15rem;flex-shrink:0;line-height:1.3}
+.info-aviso{display:flex;gap:10px;align-items:flex-start;background:var(--warning-light);color:var(--warning);padding:11px 13px;border-radius:8px;font-size:.88rem;line-height:1.45;font-weight:500}
+.info-local a.btn{text-decoration:none}
 </style>
 </head>
 <body>
@@ -182,7 +187,14 @@ tr:hover td{background:var(--surface2)}
 
   <div class="card hidden" id="stepOk">
     <div class="msg msg-ok" id="msgOk"></div>
-    <button class="btn btn-outline" onclick="novoAgendamento()" style="margin-top:12px">Novo Agendamento</button>
+    <div class="info-local">
+      <div class="info-item"><span class="info-ic">&#128340;</span><div><strong>Horário de comparecimento</strong><br>Das <strong>07:30 às 11:00</strong> da manhã.</div></div>
+      <div class="info-item"><span class="info-ic">&#128205;</span><div><strong>Local do exame</strong><br>R. Araújo Filho, 143 &ndash; Centro, Boa Vista &ndash; RR, 69301-090</div></div>
+      <a class="btn btn-outline" href="https://maps.app.goo.gl/BJwqdd1ohxFtUabr6" target="_blank" rel="noopener">Abrir no Google Maps</a>
+      <div class="info-aviso"><span class="info-ic">&#9888;&#65039;</span><div>Ao chegar no local, <strong>identifique-se como colaborador do DETRAN-RR</strong>.</div></div>
+    </div>
+    <button class="btn btn-primary" onclick="baixarComprovante()" style="margin-top:12px">&#11015;&#65039; Baixar comprovante</button>
+    <button class="btn btn-outline" onclick="novoAgendamento()" style="margin-top:8px">Novo Agendamento</button>
   </div>
 
   <div class="link-gestor"><a onclick="showLogin()">Área do Gestor</a></div>
@@ -230,11 +242,11 @@ const SB_URL = 'https://lxucuxbvjbabsdilrbwp.supabase.co';
 const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx4dWN1eGJ2amJhYnNkaWxyYndwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE4MTUxMTUsImV4cCI6MjA5NzM5MTExNX0.oJIonn-n61pIr6Fb0IVpkXiPqfEKq4v9kdHUJa0eRrs';
 const HEADERS = {'apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY,'Content-Type':'application/json','Prefer':'return=representation'};
 
-const DATES=["01/09 (Seg)","02/09 (Ter)","03/09 (Qua)","04/09 (Qui)","05/09 (Sex)",
-"08/09 (Seg)","09/09 (Ter)","10/09 (Qua)","11/09 (Qui)","12/09 (Sex)",
-"15/09 (Seg)","16/09 (Ter)","17/09 (Qua)","18/09 (Qui)","19/09 (Sex)",
-"22/09 (Seg)","23/09 (Ter)","24/09 (Qua)","25/09 (Qui)","26/09 (Sex)",
-"29/09 (Seg)","30/09 (Ter)"];
+const DATES=["01/09 (Ter)","02/09 (Qua)","03/09 (Qui)","04/09 (Sex)",
+"08/09 (Ter)","09/09 (Qua)","10/09 (Qui)","11/09 (Sex)",
+"14/09 (Seg)","15/09 (Ter)","16/09 (Qua)","17/09 (Qui)","18/09 (Sex)",
+"21/09 (Seg)","22/09 (Ter)","23/09 (Qua)","24/09 (Qui)","25/09 (Sex)",
+"28/09 (Seg)","29/09 (Ter)","30/09 (Qua)"];
 
 // ---- Credenciais Gestor ----
 const _u=atob('aGFyb2xkby5tYXJyZWlybzEwQGdtYWlsLmNvbQ==');
@@ -244,6 +256,7 @@ let LOGGED=false;
 let selectedDate='';
 let currentServidor=null;
 let adminTab='agenda';
+let lastAgendamento=null;
 
 // ---- Helpers Supabase ----
 async function sbGet(table, query=''){
@@ -339,6 +352,7 @@ async function confirmar(){
       telefone:tel,
       data_exame:selectedDate
     });
+    lastAgendamento={nome:currentServidor.nome,cpf:currentServidor.cpf,cargo:currentServidor.cargo,setor:currentServidor.setor,telefone:tel,data:selectedDate};
     document.getElementById('stepDados').classList.add('hidden');
     document.getElementById('stepOk').classList.remove('hidden');
     document.getElementById('msgOk').textContent='Agendamento confirmado para '+currentServidor.nome+' em '+selectedDate+'.';
@@ -357,6 +371,78 @@ function novoAgendamento(){
   document.getElementById('stepOk').classList.add('hidden');
   document.getElementById('stepCpf').classList.remove('hidden');
   currentServidor=null;selectedDate='';
+}
+
+// ---- Comprovante (imagem PNG) ----
+function censorCPF(cpf){
+  const d=(cpf||'').replace(/\D/g,'');
+  if(d.length!==11) return cpf||'';
+  return d.slice(0,3)+'.***.***-'+d.slice(9);
+}
+function wrapText(ctx,text,x,y,maxW,lh){
+  const words=String(text).split(' ');let line='';
+  for(let i=0;i<words.length;i++){
+    const test=line+words[i]+' ';
+    if(ctx.measureText(test).width>maxW && line){ctx.fillText(line.trim(),x,y);line=words[i]+' ';y+=lh;}
+    else line=test;
+  }
+  ctx.fillText(line.trim(),x,y);return y;
+}
+function baixarComprovante(){
+  const a=lastAgendamento;
+  if(!a){alert('Nenhum agendamento para gerar comprovante.');return;}
+  const W=720,H=740,s=2;
+  const cv=document.createElement('canvas');cv.width=W*s;cv.height=H*s;
+  const ctx=cv.getContext('2d');ctx.scale(s,s);
+  // fundo
+  ctx.fillStyle='#ffffff';ctx.fillRect(0,0,W,H);
+  // header verde
+  const ac='#0d6e3e';
+  ctx.fillStyle=ac;ctx.fillRect(0,0,W,150);
+  ctx.fillStyle='#ffffff';ctx.textAlign='center';
+  ctx.font='700 34px Segoe UI, Arial, sans-serif';
+  ctx.fillText('COMPROVANTE DE AGENDAMENTO',W/2,72);
+  ctx.font='400 20px Segoe UI, Arial, sans-serif';
+  ctx.fillText('Exame Ocupacional — DETRAN-RR',W/2,108);
+  ctx.font='400 15px Segoe UI, Arial, sans-serif';
+  ctx.fillText('Proteção e Saúde do Servidor',W/2,134);
+  ctx.textAlign='left';
+  const mx=48;let y=210;
+  function campo(label,valor,big){
+    ctx.fillStyle='#888';ctx.font='600 14px Segoe UI, Arial, sans-serif';
+    ctx.fillText(String(label).toUpperCase(),mx,y);y+=(big?38:30);
+    ctx.fillStyle='#1a1a2e';ctx.font=(big?'700 30px':'500 22px')+' Segoe UI, Arial, sans-serif';
+    y=wrapText(ctx,valor,mx,y,W-2*mx,big?36:28);y+=34;
+  }
+  campo('Nome',a.nome);
+  campo('CPF',censorCPF(a.cpf));
+  if(a.cargo)campo('Cargo',a.cargo);
+  // destaque data
+  ctx.fillStyle='#e8f5ee';ctx.fillRect(mx-16,y-24,W-2*(mx-16),132);
+  ctx.fillStyle='#0d6e3e';
+  campo('Data do exame',a.data,true);
+  campo('Horário de comparecimento','07:30 às 11:00 da manhã');
+  ctx.fillStyle='#1a1a2e';
+  campo('Local','R. Araújo Filho, 143 – Centro, Boa Vista – RR, 69301-090');
+  // aviso
+  ctx.fillStyle='#fef5e7';ctx.fillRect(mx-16,y-24,W-2*(mx-16),96);
+  ctx.fillStyle='#b9770e';ctx.font='600 17px Segoe UI, Arial, sans-serif';
+  wrapText(ctx,'⚠ Ao chegar no local, identifique-se como colaborador do DETRAN-RR.',mx,y+4,W-2*mx,26);
+  // rodape
+  ctx.fillStyle='#888';ctx.font='400 14px Segoe UI, Arial, sans-serif';ctx.textAlign='center';
+  ctx.fillText('Emitido em '+new Date().toLocaleDateString('pt-BR')+' — auditor.protecaorr.net',W/2,H-30);
+  // download
+  const url=cv.toDataURL('image/png');
+  const isIOS=/iPad|iPhone|iPod/.test(navigator.userAgent);
+  if(isIOS){
+    const w=window.open();
+    if(w){w.document.write('<title>Comprovante</title><body style="margin:0"><img src="'+url+'" style="width:100%"><p style="font-family:sans-serif;text-align:center;color:#555;padding:0 16px">Segure a imagem e toque em &ldquo;Salvar Imagem&rdquo; ou &ldquo;Adicionar &agrave; Fotos&rdquo;.</p></body>');}
+    else{location.href=url;}
+  } else {
+    const link=document.createElement('a');
+    link.href=url;link.download='comprovante-agendamento.png';
+    document.body.appendChild(link);link.click();document.body.removeChild(link);
+  }
 }
 
 // ---- Login Gestor ----
