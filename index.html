@@ -197,43 +197,6 @@ tr:hover td{background:var(--surface2)}
     <button class="btn btn-outline" onclick="novoAgendamento()" style="margin-top:8px">Novo Agendamento</button>
   </div>
 
-  <div class="link-gestor"><a onclick="showLogin()">Área do Gestor</a></div>
-</div>
-
-<!-- ===== LOGIN DO GESTOR ===== -->
-<div id="viewLogin" class="login-box hidden">
-  <h1>Área do Gestor</h1>
-  <p class="subtitle">Acesso restrito</p>
-  <div class="card">
-    <div class="field"><label>E-mail</label><input type="email" id="loginEmail" autocomplete="email"></div>
-    <div class="field"><label>Senha</label><input type="password" id="loginSenha" autocomplete="current-password"></div>
-    <button class="btn btn-primary" onclick="doLogin()">Entrar</button>
-    <div id="msgLogin"></div>
-    <div style="margin-top:12px"><button class="btn btn-outline btn-sm" onclick="showForm()">Voltar ao Formulário</button></div>
-  </div>
-</div>
-
-<!-- ===== PAINEL DO GESTOR ===== -->
-<div id="viewAdmin" class="wrap-wide hidden">
-  <div class="logout-bar">
-    <h1 style="margin:0;text-align:left">Painel do Gestor</h1>
-    <div><button class="btn btn-outline btn-sm" onclick="doLogout()">Sair</button></div>
-  </div>
-
-  <div class="stat-row" id="statsRow"></div>
-
-  <div class="tabs">
-    <div class="tab active" onclick="setAdminTab('agenda')" id="tabAgenda">Agenda por Data</div>
-    <div class="tab" onclick="setAdminTab('agendamentos')" id="tabAgendamentos">Agendamentos</div>
-    <div class="tab" onclick="setAdminTab('servidores')" id="tabServidores">Base de Servidores</div>
-  </div>
-
-  <div id="adminContent"></div>
-</div>
-
-<!-- ===== MODAL ===== -->
-<div id="modalBg" class="modal-bg hidden" onclick="closeModal(event)">
-  <div class="modal" id="modalBox" onclick="event.stopPropagation()"></div>
 </div>
 
 <script>
@@ -248,35 +211,22 @@ const DATES=["01/09 (Ter)","02/09 (Qua)","03/09 (Qui)","04/09 (Sex)",
 "21/09 (Seg)","22/09 (Ter)","23/09 (Qua)","24/09 (Qui)","25/09 (Sex)",
 "28/09 (Seg)","29/09 (Ter)","30/09 (Qua)"];
 
-// ---- Credenciais Gestor ----
-const _u=atob('aGFyb2xkby5tYXJyZWlybzEwQGdtYWlsLmNvbQ==');
-const _p=atob('SmVzdXMxMDAj');
-
-let LOGGED=false;
 let selectedDate='';
 let currentServidor=null;
 let adminTab='agenda';
 let lastAgendamento=null;
 
 // ---- Helpers Supabase ----
-async function sbGet(table, query=''){
-  const r=await fetch(SB_URL+'/rest/v1/'+table+'?'+query,{headers:{'apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY}});
-  if(!r.ok) throw new Error(await r.text());
-  return r.json();
-}
 async function sbPost(table, data){
-  const r=await fetch(SB_URL+'/rest/v1/'+table,{method:'POST',headers:HEADERS,body:JSON.stringify(data)});
+  const h=Object.assign({},HEADERS,{'Prefer':'return=minimal'});
+  const r=await fetch(SB_URL+'/rest/v1/'+table,{method:'POST',headers:h,body:JSON.stringify(data)});
   if(!r.ok){const t=await r.text();throw new Error(t);}
-  return r.json();
+  return true;
 }
-async function sbPatch(table, id, data){
-  const r=await fetch(SB_URL+'/rest/v1/'+table+'?id=eq.'+id,{method:'PATCH',headers:HEADERS,body:JSON.stringify(data)});
+async function sbRpc(fn, params){
+  const r=await fetch(SB_URL+'/rest/v1/rpc/'+fn,{method:'POST',headers:HEADERS,body:JSON.stringify(params||{})});
   if(!r.ok) throw new Error(await r.text());
   return r.json();
-}
-async function sbDelete(table, id){
-  const r=await fetch(SB_URL+'/rest/v1/'+table+'?id=eq.'+id,{method:'DELETE',headers:{'apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY}});
-  if(!r.ok) throw new Error(await r.text());
 }
 
 // ---- Máscaras ----
@@ -288,9 +238,7 @@ document.getElementById('cpfInput').addEventListener('input',function(){this.val
 document.getElementById('fTelefone').addEventListener('input',function(){this.value=maskTel(this.value)});
 
 // ---- Navegação ----
-function showView(id){['viewForm','viewLogin','viewAdmin'].forEach(v=>document.getElementById(v).classList.add('hidden'));document.getElementById(id).classList.remove('hidden')}
-function showForm(){showView('viewForm');document.getElementById('stepCpf').classList.remove('hidden');document.getElementById('stepDados').classList.add('hidden');document.getElementById('stepOk').classList.add('hidden')}
-function showLogin(){showView('viewLogin')}
+function showForm(){document.getElementById('stepCpf').classList.remove('hidden');document.getElementById('stepDados').classList.add('hidden');document.getElementById('stepOk').classList.add('hidden')}
 function voltarCpf(){document.getElementById('stepCpf').classList.remove('hidden');document.getElementById('stepDados').classList.add('hidden');selectedDate='';currentServidor=null;clearMsg('msgDados')}
 
 // ---- Formulário público ----
@@ -312,14 +260,14 @@ async function buscarCPF(){
 
   // Checar se já agendou
   try{
-    const ag=await sbGet('agendamentos_exames','cpf=eq.'+cpf+'&select=id');
-    if(ag.length>0){showMsg('msgCpf','msg-err','JÁ CADASTRADO OU AGENDADO.');return}
+    const jaAg=await sbRpc('cpf_ja_agendado',{p_cpf:cpf});
+    if(jaAg===true){showMsg('msgCpf','msg-err','JÁ CADASTRADO OU AGENDADO.');return}
   }catch(e){showMsg('msgCpf','msg-err','Erro de conexão. Tente novamente.');return}
 
   // Buscar na base
   try{
-    const sv=await sbGet('servidores_efetivos','cpf=eq.'+cpf);
-    if(sv.length===0){showMsg('msgCpf','msg-err','CPF não encontrado na base de servidores.');return}
+    const sv=await sbRpc('buscar_servidor',{p_cpf:cpf});
+    if(!sv || sv.length===0){showMsg('msgCpf','msg-err','CPF não encontrado na base de servidores.');return}
     currentServidor=sv[0];
     document.getElementById('fNome').value=currentServidor.nome;
     document.getElementById('fCargo').value=currentServidor.cargo;
@@ -443,167 +391,6 @@ function baixarComprovante(){
     link.href=url;link.download='comprovante-agendamento.png';
     document.body.appendChild(link);link.click();document.body.removeChild(link);
   }
-}
-
-// ---- Login Gestor ----
-function doLogin(){
-  clearMsg('msgLogin');
-  const e=document.getElementById('loginEmail').value.trim().toLowerCase();
-  const s=document.getElementById('loginSenha').value;
-  if(e===_u && s===_p){LOGGED=true;showView('viewAdmin');loadAdmin();}
-  else{showMsg('msgLogin','msg-err','E-mail ou senha incorretos.')}
-}
-function doLogout(){LOGGED=false;showForm();document.getElementById('loginEmail').value='';document.getElementById('loginSenha').value=''}
-
-// ---- Admin ----
-function setAdminTab(t){
-  adminTab=t;
-  document.querySelectorAll('.tab').forEach(el=>el.classList.remove('active'));
-  document.getElementById('tab'+t.charAt(0).toUpperCase()+t.slice(1)).classList.add('active');
-  renderAdmin();
-}
-
-let allAgendamentos=[];
-let allServidores=[];
-
-async function loadAdmin(){
-  try{
-    allAgendamentos=await sbGet('agendamentos_exames','order=data_exame.asc,nome.asc');
-    allServidores=await sbGet('servidores_efetivos','order=nome.asc');
-  }catch(e){document.getElementById('adminContent').innerHTML='<div class="msg msg-err">Erro ao carregar dados.</div>';return}
-  renderStats();
-  renderAdmin();
-}
-
-function renderStats(){
-  const total=allServidores.length;
-  const agendados=allAgendamentos.length;
-  const pendentes=total-agendados;
-  document.getElementById('statsRow').innerHTML=`
-    <div class="stat"><div class="n">${total}</div><div class="l">Servidores</div></div>
-    <div class="stat"><div class="n">${agendados}</div><div class="l">Agendados</div></div>
-    <div class="stat"><div class="n">${pendentes}</div><div class="l">Pendentes</div></div>
-    <div class="stat"><div class="n">${DATES.length}</div><div class="l">Datas</div></div>
-  `;
-}
-
-function renderAdmin(){
-  if(adminTab==='agenda') renderAgenda();
-  else if(adminTab==='agendamentos') renderAgendamentos();
-  else renderServidores();
-}
-
-function renderAgenda(){
-  const byDate={};
-  DATES.forEach(d=>byDate[d]=[]);
-  allAgendamentos.forEach(a=>{if(byDate[a.data_exame])byDate[a.data_exame].push(a);});
-  let html='';
-  DATES.forEach(d=>{
-    const list=byDate[d]||[];
-    html+=`<div class="day-section"><div class="day-title">${d} <span class="day-count">(${list.length} agendado${list.length!==1?'s':''})</span></div>`;
-    if(list.length){
-      html+='<div class="tbl-wrap"><table><tr><th>Nome</th><th>Setor</th><th>Telefone</th><th></th></tr>';
-      list.forEach(a=>{
-        html+=`<tr><td>${a.nome}</td><td style="font-size:.75rem">${a.setor}</td><td>${a.telefone}</td>
-        <td><button class="btn btn-outline btn-sm" onclick="editAgendamento(${a.id})">Editar</button></td></tr>`;
-      });
-      html+='</table></div>';
-    } else {
-      html+='<div style="font-size:.82rem;color:var(--text2);padding:4px 0">Nenhum agendamento</div>';
-    }
-    html+='</div>';
-  });
-  document.getElementById('adminContent').innerHTML=html;
-}
-
-function renderAgendamentos(){
-  let html='<div class="search-bar"><input type="text" id="searchAg" placeholder="Buscar por nome ou CPF..." oninput="filterAgendamentos()"></div>';
-  html+='<div class="tbl-wrap"><table><thead><tr><th>Nome</th><th>CPF</th><th>Cargo</th><th>Data</th><th>Telefone</th><th></th></tr></thead><tbody id="tbodyAg">';
-  allAgendamentos.forEach(a=>{
-    html+=`<tr><td>${a.nome}</td><td>${maskCPF(a.cpf)}</td><td style="font-size:.75rem">${a.cargo}</td><td>${a.data_exame}</td><td>${a.telefone}</td>
-    <td style="white-space:nowrap">
-      <button class="btn btn-outline btn-sm" onclick="editAgendamento(${a.id})">Editar</button>
-      <button class="btn btn-danger btn-sm" onclick="deleteAgendamento(${a.id},'${a.nome.replace(/'/g,"\\'")}')">Excluir</button>
-    </td></tr>`;
-  });
-  html+='</tbody></table></div>';
-  document.getElementById('adminContent').innerHTML=html;
-}
-
-function filterAgendamentos(){
-  const q=document.getElementById('searchAg').value.toLowerCase();
-  const rows=document.getElementById('tbodyAg').querySelectorAll('tr');
-  rows.forEach(r=>{r.style.display=r.textContent.toLowerCase().includes(q)?'':'none'});
-}
-
-function renderServidores(){
-  const agCpfs=new Set(allAgendamentos.map(a=>a.cpf));
-  let html='<div class="search-bar"><input type="text" id="searchSv" placeholder="Buscar por nome, CPF ou setor..." oninput="filterServidores()"></div>';
-  html+='<div class="tbl-wrap"><table><thead><tr><th>Nome</th><th>CPF</th><th>Cargo</th><th>Setor</th><th>Status</th></tr></thead><tbody id="tbodySv">';
-  allServidores.forEach(s=>{
-    const ok=agCpfs.has(s.cpf);
-    html+=`<tr><td>${s.nome}</td><td>${maskCPF(s.cpf)}</td><td style="font-size:.75rem">${s.cargo}</td><td style="font-size:.75rem">${s.setor}</td>
-    <td><span class="badge ${ok?'badge-ok':'badge-pend'}">${ok?'Agendado':'Pendente'}</span></td></tr>`;
-  });
-  html+='</tbody></table></div>';
-  document.getElementById('adminContent').innerHTML=html;
-}
-
-function filterServidores(){
-  const q=document.getElementById('searchSv').value.toLowerCase();
-  const rows=document.getElementById('tbodySv').querySelectorAll('tr');
-  rows.forEach(r=>{r.style.display=r.textContent.toLowerCase().includes(q)?'':'none'});
-}
-
-// ---- Modal Editar / Excluir ----
-function editAgendamento(id){
-  const a=allAgendamentos.find(x=>x.id===id);if(!a)return;
-  let opts=DATES.map(d=>`<option value="${d}" ${d===a.data_exame?'selected':''}>${d}</option>`).join('');
-  document.getElementById('modalBox').innerHTML=`
-    <h3>Editar Agendamento</h3>
-    <div class="field"><label>Nome</label><input type="text" value="${a.nome}" readonly></div>
-    <div class="field"><label>Telefone</label><input type="tel" id="editTel" value="${a.telefone}" maxlength="15"></div>
-    <div class="field"><label>Data do Exame</label><select id="editDate" style="width:100%;padding:10px;border:1.5px solid var(--border);border-radius:8px;font-size:.95rem;background:var(--surface2);color:var(--text)">${opts}</select></div>
-    <div id="msgEdit"></div>
-    <div class="modal-actions">
-      <button class="btn btn-outline" onclick="closeModal()">Cancelar</button>
-      <button class="btn btn-primary" onclick="saveEdit(${id})">Salvar</button>
-    </div>`;
-  document.getElementById('editTel').addEventListener('input',function(){this.value=maskTel(this.value)});
-  document.getElementById('modalBg').classList.remove('hidden');
-}
-
-async function saveEdit(id){
-  const tel=document.getElementById('editTel').value;
-  const dt=document.getElementById('editDate').value;
-  try{
-    await sbPatch('agendamentos_exames',id,{telefone:tel,data_exame:dt});
-    closeModal();await loadAdmin();
-  }catch(e){showMsg('msgEdit','msg-err','Erro ao salvar.')}
-}
-
-function deleteAgendamento(id,nome){
-  document.getElementById('modalBox').innerHTML=`
-    <h3>Excluir Agendamento</h3>
-    <p style="margin-bottom:12px;font-size:.9rem">Confirma a exclusão do agendamento de <strong>${nome}</strong>?</p>
-    <div id="msgDel"></div>
-    <div class="modal-actions">
-      <button class="btn btn-outline" onclick="closeModal()">Cancelar</button>
-      <button class="btn btn-danger" onclick="confirmDelete(${id})">Excluir</button>
-    </div>`;
-  document.getElementById('modalBg').classList.remove('hidden');
-}
-
-async function confirmDelete(id){
-  try{
-    await sbDelete('agendamentos_exames',id);
-    closeModal();await loadAdmin();
-  }catch(e){showMsg('msgDel','msg-err','Erro ao excluir.')}
-}
-
-function closeModal(ev){
-  if(ev && ev.target!==document.getElementById('modalBg'))return;
-  document.getElementById('modalBg').classList.add('hidden');
 }
 
 // ---- Init ----
