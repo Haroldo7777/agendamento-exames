@@ -68,7 +68,7 @@ h1{font-size:1.3rem;font-weight:700;text-align:center;margin-bottom:4px;color:va
 .subtitle{text-align:center;font-size:.82rem;color:var(--text2);margin-bottom:20px}
 .card{background:var(--surface);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);margin-bottom:16px}
 label{display:block;font-size:.82rem;font-weight:600;color:var(--text2);margin-bottom:4px;text-transform:uppercase;letter-spacing:.3px}
-input[type="text"],input[type="tel"],input[type="email"],input[type="password"]{
+input[type="text"],input[type="tel"],input[type="email"],input[type="password"],input[type="date"]{
   width:100%;padding:12px;border:1.5px solid var(--border);border-radius:8px;
   font-size:1rem;background:var(--surface2);color:var(--text);
   transition:border-color .2s;
@@ -180,6 +180,10 @@ tr:hover td{background:var(--surface2)}
     <div class="field">
       <label>Telefone para contato</label>
       <input type="tel" id="fTelefone" placeholder="(00) 00000-0000" maxlength="15" inputmode="numeric">
+    </div>
+    <div class="field">
+      <label>Data de nascimento *</label>
+      <input type="date" id="fNascimento" required max="2025-12-31" min="1930-01-01">
     </div>
     <label style="margin-top:8px">Escolha a data do exame</label>
     <div class="date-grid" id="dateGrid"></div>
@@ -316,6 +320,7 @@ async function buscarCPF(){
     document.getElementById('fSetor').value=currentServidor.setor;
     document.getElementById('fAdmissao').value=currentServidor.admissao;
     document.getElementById('fTelefone').value='';
+    document.getElementById('fNascimento').value='';
     selectedDate='';
     renderDates();
     document.getElementById('stepCpf').classList.add('hidden');
@@ -326,7 +331,9 @@ async function buscarCPF(){
 async function confirmar(){
   clearMsg('msgDados');
   const tel=document.getElementById('fTelefone').value;
+  const nascimento=document.getElementById('fNascimento').value;
   if(rawCPF(tel).length<10){showMsg('msgDados','msg-err','Informe um telefone válido.');return}
+  if(!nascimento){showMsg('msgDados','msg-err','Informe a data de nascimento.');return}
   if(!selectedDate){showMsg('msgDados','msg-err','Selecione uma data.');return}
 
   const btn=document.getElementById('btnConfirm');
@@ -340,6 +347,7 @@ async function confirmar(){
       setor:currentServidor.setor,
       admissao:currentServidor.admissao,
       telefone:tel,
+      data_nascimento:nascimento,
       data_exame:selectedDate
     });
     lastAgendamento={nome:currentServidor.nome,cpf:currentServidor.cpf,cargo:currentServidor.cargo,setor:currentServidor.setor,telefone:tel,data:selectedDate};
