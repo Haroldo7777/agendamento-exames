@@ -11,7 +11,7 @@
   agendamento-exames, o MCP já está conectado nas sessões do Claude, e RLS resolve o
   isolamento multiempresa no próprio banco.
 - **Next.js 15 (App Router) + TypeScript**, publicado no Render (ou Vercel) em
-  `auditor.protecaorr.net` — mesmo fluxo de DNS/CNAME já usado para
+  `esocial.protecaorr.net` — mesmo fluxo de DNS/CNAME já usado para
   `agendamento.protecaorr.net`.
 - **UI**: Tailwind + shadcn/ui. Um componente genérico de listagem (filtro por empresa,
   busca, paginação, exportação CSV/Excel/PDF, coluna de ações) — o padrão que se repete
@@ -97,7 +97,7 @@ Trigger genérico de auditoria no Postgres (INSERT/UPDATE/DELETE → `log_ativid
 
 | Etapa | Entrega | Depende de |
 |---|---|---|
-| 1 | Repo novo + projeto Supabase + Next.js esqueleto + deploy vazio em `auditor.protecaorr.net` | decisão do item 1 |
+| 1 | Repo novo + projeto Supabase + Next.js esqueleto + deploy vazio em `esocial.protecaorr.net` | decisão do item 1 |
 | 2 | Migrations do schema (seção 2) + seeds (CBO, Tabela 01) + RLS | 1 |
 | 3 | Auth + usuários + perfis + RLS testada com 2 usuários de consultoria | 2 |
 | 4 | CRUD empresas/estabelecimentos + componente genérico de listagem | 3 |

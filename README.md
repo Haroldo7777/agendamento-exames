@@ -48,3 +48,27 @@ estão embutidos no `index.html` (base64), então qualquer pessoa que abrir o
 código-fonte consegue lê-los. A chave do Supabase é a `anon` (pública, ok).
 Se o painel do gestor precisar ser realmente restrito, mova a autenticação para
 o Supabase Auth + RLS. Posso fazer isso depois, se quiser.
+
+## Publicar o Auditor eSocial (esocial.protecaorr.net)
+
+A página provisória do Auditor está em `esocial/index.html`. Para colocá-la no ar
+como um **segundo site estático** a partir deste mesmo repositório:
+
+1. **Render → New → Static Site**
+   - Connect repository: `Haroldo7777/agendamento-exames`
+   - Branch: `main`
+   - Build Command: *(deixar vazio)*
+   - **Publish Directory: `esocial`**
+   - Create Static Site.
+
+2. **Custom Domain** (Settings → Custom Domains do novo serviço)
+   - Add Custom Domain: `esocial.protecaorr.net`
+   - O Render mostra o alvo de **CNAME** (algo como `auditor-esocial.onrender.com`).
+
+3. **DNS** (painel do domínio `protecaorr.net`)
+   - **CNAME** | Host/Nome: `esocial` | Valor: o alvo `*.onrender.com` indicado.
+   - Propaga em minutos; HTTPS automático.
+
+Quando o sistema real do Auditor (Fase 1 do `PLANO_FASE_1_AUDITOR.md`) tiver
+repositório próprio, basta repontar esse serviço do Render para o novo repo —
+o domínio `esocial.protecaorr.net` continua o mesmo.
