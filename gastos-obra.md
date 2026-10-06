@@ -9,5 +9,6 @@
 | 03/10/2026 | Serviço de demolição | | R$ 3.000,00 |
 | 03/10/2026 | Contêiner de entulho – 2 un × R$ 240,00 | | R$ 480,00 |
 | 03/10/2026 | Contêiner de entulho – 1 un | | R$ 220,00 |
+| 06/10/2026 | Plugues para extensão | | R$ 45,00 |
 
-**Total: R$ 5.359,95**
+**Total: R$ 5.404,95**
