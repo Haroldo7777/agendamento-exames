@@ -10,5 +10,8 @@
 | 03/10/2026 | Contêiner de entulho – 2 un × R$ 240,00 | | R$ 480,00 |
 | 03/10/2026 | Contêiner de entulho – 1 un | | R$ 220,00 |
 | 06/10/2026 | Plugues para extensão | | R$ 45,00 |
+| 08/10/2026 | Brita 01 – 4 m³ | | R$ 850,00 |
+| 08/10/2026 | Areia média – 6 m³ | | R$ 250,00 |
+| 10/10/2026 | Mão de obra | | R$ 1.500,00 |
 
-**Total: R$ 5.404,95**
+**Total: R$ 8.004,95**
