@@ -15,7 +15,8 @@
 | 9 | Brita 01 – 4 m³ | 08/10/2026 | quinta-feira | R$ 850,00 |
 | 10 | Areia média – 6 m³ | 08/10/2026 | quinta-feira | R$ 250,00 |
 | 11 | Mão de obra | 10/10/2026 | sábado | R$ 1.500,00 |
-| | | | **Total** | **R$ 8.004,95** |
+| 12 | Contêiner de entulho – 1 un | 10/10/2026 | sábado | R$ 220,00 |
+| | | | **Total** | **R$ 8.224,95** |
 
 ## Resumo por categoria
 
@@ -23,9 +24,9 @@
 |---|---|
 | Mão de obra | R$ 4.500,00 |
 | Brita e areia | R$ 1.100,00 |
+| Remoção de entulho | R$ 920,00 |
 | Material de construção | R$ 780,00 |
-| Remoção de entulho | R$ 700,00 |
 | Aluguel de equipamento | R$ 560,00 |
 | Madeira | R$ 319,95 |
 | Material elétrico | R$ 45,00 |
-| **Total geral** | **R$ 8.004,95** |
+| **Total geral** | **R$ 8.224,95** |
