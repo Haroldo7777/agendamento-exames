@@ -15,3 +15,16 @@
 | 10/10/2026 | Mão de obra | | R$ 1.500,00 |
 
 **Total: R$ 8.004,95**
+
+## Resumo por categoria
+
+| Categoria | Valor |
+|---|---|
+| Mão de obra | R$ 4.500,00 |
+| Brita e areia | R$ 1.100,00 |
+| Material de construção | R$ 780,00 |
+| Remoção de entulho | R$ 700,00 |
+| Aluguel de equipamento | R$ 560,00 |
+| Madeira | R$ 319,95 |
+| Material elétrico | R$ 45,00 |
+| **Total geral** | **R$ 8.004,95** |
