@@ -16,7 +16,8 @@
 | 10 | Areia média – 6 m³ | 08/10/2026 | quinta-feira | R$ 250,00 |
 | 11 | Mão de obra | 10/10/2026 | sábado | R$ 1.500,00 |
 | 12 | Contêiner de entulho – 1 un | 10/10/2026 | sábado | R$ 220,00 |
-| | | | **Total** | **R$ 8.224,95** |
+| 13 | Aluguel mensal de betoneira 410 L | 10/10/2026 | sábado | R$ 430,00 |
+| | | | **Total** | **R$ 8.654,95** |
 
 ## Resumo por categoria
 
@@ -24,9 +25,9 @@
 |---|---|
 | Mão de obra | R$ 4.500,00 |
 | Brita e areia | R$ 1.100,00 |
+| Aluguel de equipamento | R$ 990,00 |
 | Remoção de entulho | R$ 920,00 |
 | Material de construção | R$ 780,00 |
-| Aluguel de equipamento | R$ 560,00 |
 | Madeira | R$ 319,95 |
 | Material elétrico | R$ 45,00 |
-| **Total geral** | **R$ 8.224,95** |
+| **Total geral** | **R$ 8.654,95** |
