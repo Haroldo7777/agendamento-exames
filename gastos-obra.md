@@ -8,7 +8,7 @@
 | 2 | Tábuas mistas 2x20: 6 de 5,00 m e 6 de 2,50 m – Norte Madeiras, orç. 10378 | 02/10/2026 | sexta-feira | R$ 319,95 |
 | 3 | Aluguel de betoneira 400 L (06/10 a 04/11) – I.A.B Locação | 03/10/2026 | sábado | R$ 430,00 |
 | 4 | Aluguel de martelete | 03/10/2026 | sábado | R$ 130,00 |
-| 5 | Serviço de demolição (mão de obra) | 03/10/2026 | sábado | R$ 3.000,00 |
+| 5 | Serviço de demolição | 03/10/2026 | sábado | R$ 3.000,00 |
 | 6 | Contêiner de entulho – 2 un × R$ 240,00 | 03/10/2026 | sábado | R$ 480,00 |
 | 7 | Contêiner de entulho – 1 un | 03/10/2026 | sábado | R$ 220,00 |
 | 8 | Plugues para extensão | 06/10/2026 | terça-feira | R$ 45,00 |
@@ -27,8 +27,8 @@
 | | Valor |
 |---|---|
 | Total acertado | R$ 40.000,00 |
-| Pago até aqui | R$ 8.400,00 |
-| **Falta pagar** | **R$ 31.600,00** |
+| Pago até aqui | R$ 5.400,00 |
+| **Falta pagar** | **R$ 34.600,00** |
 
 **Material**
 
@@ -36,17 +36,18 @@
 |---|---|
 | Total gasto em material | R$ 2.244,95 |
 
-**Outros (aluguel de equipamento e remoção de entulho)**
+**Outros serviços (demolição, aluguel de equipamento e remoção de entulho)**
 
 | | Valor |
 |---|---|
-| Total | R$ 1.700,00 |
+| Total | R$ 4.700,00 |
 
 ## Resumo por categoria
 
 | Categoria | Valor |
 |---|---|
-| Mão de obra | R$ 8.400,00 |
+| Mão de obra | R$ 5.400,00 |
+| Serviço de demolição | R$ 3.000,00 |
 | Remoção de entulho | R$ 1.140,00 |
 | Brita e areia | R$ 1.100,00 |
 | Material de construção | R$ 780,00 |
