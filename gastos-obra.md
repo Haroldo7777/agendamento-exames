@@ -17,7 +17,7 @@
 | 11 | Mão de obra | 10/10/2026 | sábado | R$ 1.500,00 |
 | 12 | Contêiner de entulho – 1 un | 10/10/2026 | sábado | R$ 220,00 |
 | 13 | Contêiner de entulho – 1 un | 13/10/2026 | terça-feira | R$ 220,00 |
-| 14 | Mão de obra (compra de geladeira) | 14/10/2026 | quarta-feira | R$ 3.900,00 |
+| 14 | Mão de obra – adiantamento ao empreiteiro (compra de geladeira) | 14/10/2026 | quarta-feira | R$ 3.900,00 |
 | | | | **Total** | **R$ 12.344,95** |
 
 ## Acompanhamento
