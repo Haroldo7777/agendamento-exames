@@ -20,6 +20,28 @@
 | 14 | Mão de obra (compra de geladeira) | 14/10/2026 | quarta-feira | R$ 3.900,00 |
 | | | | **Total** | **R$ 12.344,95** |
 
+## Acompanhamento
+
+**Mão de obra (empreitada)**
+
+| | Valor |
+|---|---|
+| Total acertado | R$ 40.000,00 |
+| Pago até aqui | R$ 8.400,00 |
+| **Falta pagar** | **R$ 31.600,00** |
+
+**Material**
+
+| | Valor |
+|---|---|
+| Total gasto em material | R$ 2.244,95 |
+
+**Outros (aluguel de equipamento e remoção de entulho)**
+
+| | Valor |
+|---|---|
+| Total | R$ 1.700,00 |
+
 ## Resumo por categoria
 
 | Categoria | Valor |
