@@ -18,7 +18,9 @@
 | 12 | Contêiner de entulho – 1 un | 10/10/2026 | sábado | R$ 220,00 |
 | 13 | Contêiner de entulho – 1 un | 13/10/2026 | terça-feira | R$ 220,00 |
 | 14 | Mão de obra – adiantamento ao empreiteiro (compra de geladeira) | 14/10/2026 | quarta-feira | R$ 3.900,00 |
-| | | | **Total** | **R$ 12.344,95** |
+| 15 | Mão de obra (empreitada) – em espécie | 16/10/2026 | sexta-feira | R$ 1.000,00 |
+| 16 | Mão de obra (empreitada) – PIX | 17/10/2026 | sábado | R$ 1.000,00 |
+| | | | **Total** | **R$ 14.344,95** |
 
 ## Acompanhamento
 
@@ -27,8 +29,8 @@
 | | Valor |
 |---|---|
 | Total acertado | R$ 40.000,00 |
-| Pago até aqui | R$ 5.400,00 |
-| **Falta pagar** | **R$ 34.600,00** |
+| Pago até aqui | R$ 7.400,00 |
+| **Falta pagar** | **R$ 32.600,00** |
 
 **Material**
 
@@ -46,7 +48,7 @@
 
 | Categoria | Valor |
 |---|---|
-| Mão de obra | R$ 5.400,00 |
+| Mão de obra | R$ 7.400,00 |
 | Serviço de demolição | R$ 3.000,00 |
 | Remoção de entulho | R$ 1.140,00 |
 | Brita e areia | R$ 1.100,00 |
@@ -54,4 +56,4 @@
 | Aluguel de equipamento | R$ 560,00 |
 | Madeira | R$ 319,95 |
 | Material elétrico | R$ 45,00 |
-| **Total geral** | **R$ 12.344,95** |
+| **Total geral** | **R$ 14.344,95** |
