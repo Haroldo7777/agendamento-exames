@@ -19,8 +19,10 @@
 | 13 | Contêiner de entulho – 1 un | 13/10/2026 | terça-feira | R$ 220,00 |
 | 14 | Mão de obra – adiantamento ao empreiteiro (compra de geladeira) | 14/10/2026 | quarta-feira | R$ 3.900,00 |
 | 15 | Mão de obra (empreitada) – em espécie | 16/10/2026 | sexta-feira | R$ 1.000,00 |
-| 16 | Mão de obra (empreitada) – PIX | 17/10/2026 | sábado | R$ 1.000,00 |
-| | | | **Total** | **R$ 14.344,95** |
+| 16 | Tábua mista 2x20 × 2,50 m bruta (12 pç) – Norte Madeiras, orç. 10975, à vista | 16/10/2026 | sexta-feira | R$ 210,00 |
+| 17 | Ripa mista 2x7 × 2,50 m bruta (12 pç) – Norte Madeiras, orç. 10979, à vista | 16/10/2026 | sexta-feira | R$ 78,00 |
+| 18 | Mão de obra (empreitada) – PIX | 17/10/2026 | sábado | R$ 1.000,00 |
+| | | | **Total** | **R$ 14.632,95** |
 
 ## Acompanhamento
 
@@ -36,7 +38,7 @@
 
 | | Valor |
 |---|---|
-| Total gasto em material | R$ 2.244,95 |
+| Total gasto em material | R$ 2.532,95 |
 
 **Outros serviços (demolição, aluguel de equipamento e remoção de entulho)**
 
@@ -53,7 +55,7 @@
 | Remoção de entulho | R$ 1.140,00 |
 | Brita e areia | R$ 1.100,00 |
 | Material de construção | R$ 780,00 |
+| Madeira | R$ 607,95 |
 | Aluguel de equipamento | R$ 560,00 |
-| Madeira | R$ 319,95 |
 | Material elétrico | R$ 45,00 |
-| **Total geral** | **R$ 14.344,95** |
+| **Total geral** | **R$ 14.632,95** |
