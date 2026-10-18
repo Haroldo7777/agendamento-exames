@@ -22,7 +22,8 @@
 | 16 | Tábua mista 2x20 × 2,50 m bruta (12 pç) – Norte Madeiras, orç. 10975, à vista | 16/10/2026 | sexta-feira | R$ 210,00 |
 | 17 | Ripa mista 2x7 × 2,50 m bruta (12 pç) – Norte Madeiras, orç. 10979, à vista | 16/10/2026 | sexta-feira | R$ 78,00 |
 | 18 | Mão de obra (empreitada) – PIX | 17/10/2026 | sábado | R$ 1.000,00 |
-| | | | **Total** | **R$ 14.632,95** |
+| 19 | Cimento – 10 sacos, à vista | 18/10/2026 | domingo | R$ 615,00 |
+| | | | **Total** | **R$ 15.247,95** |
 
 ## Acompanhamento
 
@@ -38,7 +39,7 @@
 
 | | Valor |
 |---|---|
-| Total gasto em material | R$ 2.532,95 |
+| Total gasto em material | R$ 3.147,95 |
 
 **Outros serviços (demolição, aluguel de equipamento e remoção de entulho)**
 
@@ -52,10 +53,10 @@
 |---|---|
 | Mão de obra | R$ 7.400,00 |
 | Serviço de demolição | R$ 3.000,00 |
+| Material de construção | R$ 1.395,00 |
 | Remoção de entulho | R$ 1.140,00 |
 | Brita e areia | R$ 1.100,00 |
-| Material de construção | R$ 780,00 |
 | Madeira | R$ 607,95 |
 | Aluguel de equipamento | R$ 560,00 |
 | Material elétrico | R$ 45,00 |
-| **Total geral** | **R$ 14.632,95** |
+| **Total geral** | **R$ 15.247,95** |
