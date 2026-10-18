@@ -11,19 +11,21 @@
 | 5 | Serviço de demolição | 03/10/2026 | sábado | R$ 3.000,00 |
 | 6 | Contêiner de entulho – 2 un × R$ 240,00 | 03/10/2026 | sábado | R$ 480,00 |
 | 7 | Contêiner de entulho – 1 un | 03/10/2026 | sábado | R$ 220,00 |
-| 8 | Plugues para extensão | 06/10/2026 | terça-feira | R$ 45,00 |
-| 9 | Brita 01 – 4 m³ | 08/10/2026 | quinta-feira | R$ 850,00 |
-| 10 | Areia média – 6 m³ | 08/10/2026 | quinta-feira | R$ 250,00 |
-| 11 | Mão de obra | 10/10/2026 | sábado | R$ 1.500,00 |
-| 12 | Contêiner de entulho – 1 un | 10/10/2026 | sábado | R$ 220,00 |
-| 13 | Contêiner de entulho – 1 un | 13/10/2026 | terça-feira | R$ 220,00 |
-| 14 | Mão de obra – adiantamento ao empreiteiro (compra de geladeira) | 14/10/2026 | quarta-feira | R$ 3.900,00 |
-| 15 | Mão de obra (empreitada) – em espécie | 16/10/2026 | sexta-feira | R$ 1.000,00 |
-| 16 | Tábua mista 2x20 × 2,50 m bruta (12 pç) – Norte Madeiras, orç. 10975, à vista | 16/10/2026 | sexta-feira | R$ 210,00 |
-| 17 | Ripa mista 2x7 × 2,50 m bruta (12 pç) – Norte Madeiras, orç. 10979, à vista | 16/10/2026 | sexta-feira | R$ 78,00 |
-| 18 | Mão de obra (empreitada) – PIX | 17/10/2026 | sábado | R$ 1.000,00 |
-| 19 | Cimento – 10 sacos, à vista | 18/10/2026 | domingo | R$ 615,00 |
-| | | | **Total** | **R$ 15.247,95** |
+| 8 | Tijolo 6 furos – 2 milheiros | 06/10/2026 | terça-feira | R$ 1.530,00 |
+| 9 | Plugues para extensão | 06/10/2026 | terça-feira | R$ 45,00 |
+| 10 | Brita 01 – 4 m³ | 08/10/2026 | quinta-feira | R$ 850,00 |
+| 11 | Areia média – 6 m³ | 08/10/2026 | quinta-feira | R$ 250,00 |
+| 12 | Mão de obra | 10/10/2026 | sábado | R$ 1.500,00 |
+| 13 | Contêiner de entulho – 1 un | 10/10/2026 | sábado | R$ 220,00 |
+| 14 | Contêiner de entulho – 1 un | 13/10/2026 | terça-feira | R$ 220,00 |
+| 15 | Mão de obra – adiantamento ao empreiteiro (compra de geladeira) | 14/10/2026 | quarta-feira | R$ 3.900,00 |
+| 16 | Mão de obra (empreitada) – em espécie | 16/10/2026 | sexta-feira | R$ 1.000,00 |
+| 17 | Tábua mista 2x20 × 2,50 m bruta (12 pç) – Norte Madeiras, orç. 10975, à vista | 16/10/2026 | sexta-feira | R$ 210,00 |
+| 18 | Ripa mista 2x7 × 2,50 m bruta (12 pç) – Norte Madeiras, orç. 10979, à vista | 16/10/2026 | sexta-feira | R$ 78,00 |
+| 19 | Tijolo 6 furos – 2 milheiros | 16/10/2026 | sexta-feira | R$ 1.640,00 |
+| 20 | Mão de obra (empreitada) – PIX | 17/10/2026 | sábado | R$ 1.000,00 |
+| 21 | Cimento – 10 sacos, à vista | 18/10/2026 | domingo | R$ 615,00 |
+| | | | **Total** | **R$ 18.417,95** |
 
 ## Acompanhamento
 
@@ -39,7 +41,7 @@
 
 | | Valor |
 |---|---|
-| Total gasto em material | R$ 3.147,95 |
+| Total gasto em material | R$ 6.317,95 |
 
 **Outros serviços (demolição, aluguel de equipamento e remoção de entulho)**
 
@@ -52,11 +54,11 @@
 | Categoria | Valor |
 |---|---|
 | Mão de obra | R$ 7.400,00 |
+| Material de construção | R$ 4.565,00 |
 | Serviço de demolição | R$ 3.000,00 |
-| Material de construção | R$ 1.395,00 |
 | Remoção de entulho | R$ 1.140,00 |
 | Brita e areia | R$ 1.100,00 |
 | Madeira | R$ 607,95 |
 | Aluguel de equipamento | R$ 560,00 |
 | Material elétrico | R$ 45,00 |
-| **Total geral** | **R$ 15.247,95** |
+| **Total geral** | **R$ 18.417,95** |
