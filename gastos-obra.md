@@ -25,7 +25,8 @@
 | 19 | Tijolo 6 furos – 2 milheiros | 16/10/2026 | sexta-feira | R$ 1.640,00 |
 | 20 | Mão de obra (empreitada) – PIX | 17/10/2026 | sábado | R$ 1.000,00 |
 | 21 | Cimento – 10 sacos, à vista | 18/10/2026 | domingo | R$ 615,00 |
-| | | | **Total** | **R$ 18.417,95** |
+| 22 | Ferro 10 mm – 4 varas de 6 m – Brasferro | 22/10/2026 | quinta-feira | R$ 500,00 |
+| | | | **Total** | **R$ 18.917,95** |
 
 ## Acompanhamento
 
@@ -41,7 +42,7 @@
 
 | | Valor |
 |---|---|
-| Total gasto em material | R$ 6.317,95 |
+| Total gasto em material | R$ 6.817,95 |
 
 **Outros serviços (demolição, aluguel de equipamento e remoção de entulho)**
 
@@ -54,11 +55,11 @@
 | Categoria | Valor |
 |---|---|
 | Mão de obra | R$ 7.400,00 |
-| Material de construção | R$ 4.565,00 |
+| Material de construção | R$ 5.065,00 |
 | Serviço de demolição | R$ 3.000,00 |
 | Remoção de entulho | R$ 1.140,00 |
 | Brita e areia | R$ 1.100,00 |
 | Madeira | R$ 607,95 |
 | Aluguel de equipamento | R$ 560,00 |
 | Material elétrico | R$ 45,00 |
-| **Total geral** | **R$ 18.417,95** |
+| **Total geral** | **R$ 18.917,95** |
