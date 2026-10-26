@@ -1,7 +1,5 @@
 # Gastos da Obra – Rua São Cristóvão, 93 (Cinturão Verde)
 
-## Lançamentos
-
 | Item | Descrição | Grupo | Data | Dia | Valor |
 |---|---|---|---|---|---|
 | 1 | Arame recozido (4 kg), pregos 2.1/2x11 (6 kg) e tela p/ coluna 6 mm (10 pç) – BRB Materiais, NF-e 253581, vence 01/11 | Material | 02/10/2026 | sexta-feira | R$ 780,00 |
@@ -28,14 +26,8 @@
 | 22 | Ferro 10 mm – 4 varas de 6 m – Brasferro | Material | 22/10/2026 | quinta-feira | R$ 500,00 |
 | 23 | Mão de obra (empreitada) – em espécie | Mão de obra | 24/10/2026 | sábado | R$ 500,00 |
 | 24 | Mão de obra (empreitada) – PIX | Mão de obra | 24/10/2026 | sábado | R$ 1.000,00 |
-| | | | | **Total** | **R$ 20.417,95** |
-
-## Resumo
-
-| Grupo | Valor |
-|---|---|
-| Mão de obra paga (de R$ 40.000,00) | R$ 8.900,00 |
-| Mão de obra – falta pagar | R$ 31.100,00 |
-| Material (compras, locação de equipamentos e remoção de entulho) | R$ 8.517,95 |
-| Demolição da obra | R$ 3.000,00 |
-| **Total geral da obra** | **R$ 20.417,95** |
+| | **TOTAL GERAL** | | | | **R$ 20.417,95** |
+| | Mão de obra paga (de R$ 40.000,00) | Mão de obra | | | R$ 8.900,00 |
+| | Mão de obra – falta pagar | Mão de obra | | | R$ 31.100,00 |
+| | Material (compras, locação de equipamentos e remoção de entulho) | Material | | | R$ 8.517,95 |
+| | Demolição da obra | Demolição da obra | | | R$ 3.000,00 |
