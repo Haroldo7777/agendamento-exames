@@ -27,8 +27,9 @@
 | 23 | Mão de obra (empreitada) – em espécie | Mão de obra | 24/10/2026 | sábado | R$ 500,00 |
 | 24 | Mão de obra (empreitada) – PIX | Mão de obra | 24/10/2026 | sábado | R$ 1.000,00 |
 | 25 | Treliça TG12 6.6/4.2 – 12 m – Brasferro, orç. 9208522, em dinheiro | Material | 27/10/2026 | terça-feira | R$ 525,00 |
-| | **TOTAL GERAL** | | | | **R$ 20.942,95** |
+| 26 | Eletroduto corrugado flex 25mm×50m (1 rolo) e caixa de luz 4x2 (15 un) – BW Elétrica, NFC-e 43199, QR code | Material | 30/10/2026 | sexta-feira | R$ 110,00 |
+| | **TOTAL GERAL** | | | | **R$ 21.052,95** |
 | | Mão de obra paga (de R$ 40.000,00) | Mão de obra | | | R$ 8.900,00 |
 | | Mão de obra – falta pagar | Mão de obra | | | R$ 31.100,00 |
-| | Material (compras, locação de equipamentos e remoção de entulho) | Material | | | R$ 9.042,95 |
+| | Material (compras, locação de equipamentos e remoção de entulho) | Material | | | R$ 9.152,95 |
 | | Demolição da obra | Demolição da obra | | | R$ 3.000,00 |
