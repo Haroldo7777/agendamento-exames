@@ -29,8 +29,10 @@
 | 25 | Treliça TG12 6.6/4.2 – 12 m – Brasferro, orç. 9208522, em dinheiro | Material | 27/10/2026 | terça-feira | R$ 525,00 |
 | 26 | Eletroduto corrugado flex 25mm×50m (1 rolo) e caixa de luz 4x2 (15 un) – BW Elétrica, NFC-e 43199, QR code | Material | 30/10/2026 | sexta-feira | R$ 110,00 |
 | 27 | Cimento CP IV 32 – 7 sacos – Material Lobão, venda 115825, PIX | Material | 30/10/2026 | sexta-feira | R$ 402,50 |
-| | **TOTAL GERAL** | | | | **R$ 21.455,45** |
-| | Mão de obra paga (de R$ 40.000,00) | Mão de obra | | | R$ 8.900,00 |
-| | Mão de obra – falta pagar | Mão de obra | | | R$ 31.100,00 |
+| 28 | Mão de obra (empreitada) – Palhares, PIX | Mão de obra | 01/11/2026 | domingo | R$ 1.000,00 |
+| 29 | Mão de obra (empreitada) – ajudante do Palhares, PIX | Mão de obra | 01/11/2026 | domingo | R$ 600,00 |
+| | **TOTAL GERAL** | | | | **R$ 23.055,45** |
+| | Mão de obra paga (de R$ 40.000,00) | Mão de obra | | | R$ 10.500,00 |
+| | Mão de obra – falta pagar | Mão de obra | | | R$ 29.500,00 |
 | | Material (compras, locação de equipamentos e remoção de entulho) | Material | | | R$ 9.555,45 |
 | | Demolição da obra | Demolição da obra | | | R$ 3.000,00 |
