@@ -35,8 +35,10 @@
 | 31 | Treliça TG12 – 6 m – Brasferro, PIX | Material | 05/11/2026 | quinta-feira | R$ 50,00 |
 | 32 | Mão de obra (empreitada) – Palhares, PIX | Mão de obra | 06/11/2026 | sexta-feira | R$ 1.200,00 |
 | 33 | Mão de obra (empreitada) – ajudante do Palhares, PIX | Mão de obra | 06/11/2026 | sexta-feira | R$ 300,00 |
-| | **TOTAL GERAL** | | | | **R$ 24.980,45** |
+| 34 | Cimento CP IV 32 – 5 sacos – Material Lobão, venda 116351, PIX | Material | 09/11/2026 | segunda-feira | R$ 295,00 |
+| 35 | Aditivo plastificante Quartzolit 3,6 L (1 un) – Material Lobão, venda 256232, PIX | Material | 09/11/2026 | segunda-feira | R$ 64,60 |
+| | **TOTAL GERAL** | | | | **R$ 25.340,05** |
 | | Mão de obra paga (de R$ 40.000,00) | Mão de obra | | | R$ 12.000,00 |
 | | Mão de obra – falta pagar | Mão de obra | | | R$ 28.000,00 |
-| | Material (compras, locação de equipamentos e remoção de entulho) | Material | | | R$ 9.980,45 |
+| | Material (compras, locação de equipamentos e remoção de entulho) | Material | | | R$ 10.340,05 |
 | | Demolição da obra | Demolição da obra | | | R$ 3.000,00 |
