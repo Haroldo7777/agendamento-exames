@@ -38,7 +38,7 @@
 | 34 | Cimento CP IV 32 – 5 sacos – Material Lobão, venda 116351, PIX | Material | 09/11/2026 | segunda-feira | R$ 295,00 |
 | 35 | Aditivo plastificante Quartzolit 3,6 L (1 un) – Material Lobão, venda 256232, PIX | Material | 09/11/2026 | segunda-feira | R$ 64,60 |
 | 36 | Quadro de distribuição PVC embutir 16/24 c/ barramento – Pau Brasil, NFC-e 168928, PIX | Material | 12/11/2026 | quinta-feira | R$ 205,00 |
-| 37 | Treliça 18 m (R$ 115,00) + corte (R$ 15,00) | Material | 12/11/2026 | quinta-feira | R$ 130,00 |
+| 37 | Treliça 18 m (R$ 115,00) + corte (R$ 15,00) – Brasfair | Material | 12/11/2026 | quinta-feira | R$ 130,00 |
 | | **TOTAL GERAL** | | | | **R$ 25.675,05** |
 | | Mão de obra paga (de R$ 40.000,00) | Mão de obra | | | R$ 12.000,00 |
 | | Mão de obra – falta pagar | Mão de obra | | | R$ 28.000,00 |
