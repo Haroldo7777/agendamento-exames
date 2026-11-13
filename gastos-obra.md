@@ -41,8 +41,10 @@
 | 37 | Treliça 18 m (R$ 115,00) + corte (R$ 15,00) – Brasfair | Material | 12/11/2026 | quinta-feira | R$ 130,00 |
 | 38 | Tijolo – 1 milheiro (comprado da sogra) | Material | 13/11/2026 | sexta-feira | R$ 500,00 |
 | 39 | Cimento CP IV 32 – 10 sacos – Material Lobão, venda 116789, dinheiro | Material | 13/11/2026 | sexta-feira | R$ 590,00 |
-| | **TOTAL GERAL** | | | | **R$ 26.765,05** |
-| | Mão de obra paga (de R$ 40.000,00) | Mão de obra | | | R$ 12.000,00 |
-| | Mão de obra – falta pagar | Mão de obra | | | R$ 28.000,00 |
+| 40 | Mão de obra (empreitada) – PIX | Mão de obra | 13/11/2026 | sexta-feira | R$ 600,00 |
+| 41 | Mão de obra (empreitada) – em espécie | Mão de obra | 13/11/2026 | sexta-feira | R$ 1.000,00 |
+| | **TOTAL GERAL** | | | | **R$ 28.365,05** |
+| | Mão de obra paga (de R$ 40.000,00) | Mão de obra | | | R$ 13.600,00 |
+| | Mão de obra – falta pagar | Mão de obra | | | R$ 26.400,00 |
 | | Material (compras, locação de equipamentos e remoção de entulho) | Material | | | R$ 11.765,05 |
 | | Demolição da obra | Demolição da obra | | | R$ 3.000,00 |
